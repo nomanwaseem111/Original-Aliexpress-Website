@@ -22,9 +22,6 @@ const productSchema = new mongoose.Schema({
 
 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.post('/product', (req, res) => {
     
