@@ -21,9 +21,23 @@ const productSchema = new mongoose.Schema({
   const productModel = mongoose.model('product', productSchema);
 
 
+  app.get('/products' , async (req,res) => {
+
+    
+       let result = await productModel.find({})
+       .exec()
+       .catch(e => {
+         console.log("db error : ", e);
+          res.status(500).send({message : "db error in getting products in database"});
+          return;
+       })
+       console.log("Product Saved :" , result);
+       res.status(201).send({message : "Product Saved", data : "Product Saved" })
+
+  })
 
 
-app.post('/product', (req, res) => {
+app.post('/product', async (req, res) => {
     
 
    let body = req.body
@@ -41,7 +55,7 @@ app.post('/product', (req, res) => {
     }
 
 
-     let result = productModel.create({
+     let result = await productModel.create({
 
          productName : body.productName,
          productPrice : body.productPrice,
