@@ -66,7 +66,7 @@
 
     <script>
 
-        const getAllData = () => {
+        const getAllData = async () => {
 
             try {
                 const response = await axios.get('https://original-aliexpress-website.herokuapp.com/products');
@@ -94,7 +94,7 @@
 
             } catch (error) {
                 console.error(error.response.data.message);
-                
+
             }
 
 
