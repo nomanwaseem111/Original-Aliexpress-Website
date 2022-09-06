@@ -31,8 +31,8 @@ const productSchema = new mongoose.Schema({
           res.status(500).send({message : "db error in getting products in database"});
           return;
        })
-       console.log("Product Saved :" , result);
-       res.status(201).send({message : "Product Saved", data : "Product Saved" })
+       console.log("Product Saved :", result);
+       res.status(201).send({data : result })
 
   })
 

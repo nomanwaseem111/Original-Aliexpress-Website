@@ -73,23 +73,7 @@
                 console.log(response.data.data);
 
 
-                let main = document.querySelector('.main')
-
-                response.data.data.map(eachProduct => {
-
-
-                    main.innerHTML += `<div class="productList">
-                        <img src="./smartwatch.jpg_.webp" alt="">
-                       <p class="productName">${eachProduct.productName}</p>
-                       <p><span class="currencyCode">${eachProduct.currencyCode}</span><span class="price">${eachProduct.productPrice}</span></p>
-                       <p class="numberOfSale">${eachProduct.numberOfSale || 0} sold</p>
-                      <p class="isFreeShipping">${(eachProduct.isFreeShipping) ? "Free Shipping" : "No Free Shipping"}</p>
-                    <p class="shopName">${eachProduct.shopName}</p>
-                     </div>`
-
-
-                })
-
+             
 
               
 
