@@ -78,7 +78,7 @@
                 response.data.data.map(eachProduct => {
 
 
-                    main.innerHTML = `<div class="productList">
+                    main.innerHTML += `<div class="productList">
                         <img src="./smartwatch.jpg_.webp" alt="">
                        <p class="productName">${eachProduct.productName}</p>
                        <p><span class="currencyCode">${eachProduct.currencyCode}</span><span class="price">${eachProduct.productPrice}</span></p>
@@ -90,15 +90,19 @@
 
                 })
 
+
               
 
             } catch (error) {
-                console.error(error.response.data.message);
+                console.error(error.response.data);
 
             }
 
 
         }
+
+        getAllData();   
+
 
 
     </script>
